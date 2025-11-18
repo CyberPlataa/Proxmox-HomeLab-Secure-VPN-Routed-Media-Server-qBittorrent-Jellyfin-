@@ -1,0 +1,2 @@
+# Proxmox-HomeLab-Secure-VPN-Routed-Media-Server-qBittorrent-Jellyfin-
+Implemented a secure, self-hosted media server stack inside Proxmox hypervisor using:  Ubuntu Server 22.04  WireGuard VPN, qBittorrent, Jellyfin media server, A scalable /mnt/media filesystem layout  The goal was to build real-world skills in virtualization, networking, Linux administration, encryption, routing, and service troubleshooting.
