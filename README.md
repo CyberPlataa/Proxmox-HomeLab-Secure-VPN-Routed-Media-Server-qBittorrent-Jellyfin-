@@ -1,7 +1,18 @@
 
 Proxmox HomeLab — Secure VPN-Routed Media Server (qBittorrent + Jellyfin)
-Table of Contents
 
+![Linux](https://img.shields.io/badge/Linux-Server-111?logo=linux&logoColor=white)
+![Proxmox](https://img.shields.io/badge/Proxmox-VE-orange?logo=proxmox)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-22.04-E95420?logo=ubuntu&logoColor=white)
+![WireGuard](https://img.shields.io/badge/WireGuard-VPN-88171A?logo=wireguard&logoColor=white)
+![qBittorrent](https://img.shields.io/badge/qBittorrent-nox-094A8F?logo=bittorrent&logoColor=white)
+![Jellyfin](https://img.shields.io/badge/Jellyfin-Media%20Server-00A4DC?logo=jellyfin&logoColor=white)
+![Networking](https://img.shields.io/badge/Networking-Routing-555)
+![Virtualization](https://img.shields.io/badge/Virtualization-Proxmox-ff6600)
+
+
+
+Table of Contents
 Overview
 Architecture
 Proxmox Setup
