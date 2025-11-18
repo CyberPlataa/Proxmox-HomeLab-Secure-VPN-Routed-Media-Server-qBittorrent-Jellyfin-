@@ -1,4 +1,3 @@
-
 Proxmox HomeLab — Secure VPN-Routed Media Server (qBittorrent + Jellyfin)
 
 ![Linux](https://img.shields.io/badge/Linux-Server-111?logo=linux&logoColor=white)
@@ -12,7 +11,7 @@ Proxmox HomeLab — Secure VPN-Routed Media Server (qBittorrent + Jellyfin)
 
 
 
-Table of Contents
+###Table of Contents
 Overview
 Architecture
 Proxmox Setup
@@ -24,7 +23,7 @@ Troubleshooting & Lessons
 
 
 
-Overview
+##Overview
 
 This project implements a secure, self-hosted media server stack inside a Proxmox VE hypervisor using:
 Ubuntu Server 22.04
@@ -105,7 +104,7 @@ sudo wg-quick up wg0
 
 Verify
 curl ifconfig.me
-# Returned Mullvad exit IP: 146.70.171.183
+Returned Mullvad exit IP: 146.70.171.183
 
 Auto Start
 sudo systemctl enable wg-quick@wg0
