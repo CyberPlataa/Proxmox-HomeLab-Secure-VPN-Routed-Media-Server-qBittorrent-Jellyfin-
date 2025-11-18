@@ -26,25 +26,27 @@ The goal was to build real-world skills in virtualization, networking, Linux adm
 
 
 
-Architecture
-           ┌───────────────────────┐
-           │       Proxmox VE       │
-           │  (Bare-metal hypervisor)│
-           └────────────┬──────────┘
-                        │
-           ┌────────────┴────────────┐
-           │       Ubuntu Server       │
-           │         VM (22.04)        │
-           └───────┬─────────┬────────┘
-                   │         │
-        ┌──────────┘         └──────────┐
-        ▼                                 ▼
-WireGuard VPN (wg0)               Jellyfin Media Server
-(Mullvad encrypted tunnel)         Web UI on port 8096
-        │
-        ▼
-qBittorrent (bound to wg0)
-Secure torrenting, no leaks
+## Architecture (Mermaid Diagram)
+
+```mermaid
+flowchart TD
+
+    A[Proxmox VE<br/>Bare-metal Hypervisor]
+
+    A --> B[Ubuntu Server VM<br/>22.04 LTS]
+
+    B --> C[WireGuard VPN<br/>Mullvad Tunnel<br/>Interface: wg0]
+
+    C --> D[qBittorrent-nox<br/>Bound to wg0<br/>No IP leaks]
+
+    B --> E[Jellyfin Media Server<br/>Port 8096]
+
+    style A fill:#1e1e1e,stroke:#ffffff,stroke-width:1px,color:#ffffff
+    style B fill:#2b2b2b,stroke:#ffffff,stroke-width:1px,color:#ffffff
+    style C fill:#333333,stroke:#ffffff,stroke-width:1px,color:#ffffff
+    style D fill:#444444,stroke:#ffffff,stroke-width:1px,color:#ffffff
+    style E fill:#444444,stroke:#ffffff,stroke-width:1px,color:#ffffff
+```
 
 
 All torrent traffic is routed exclusively through wg0.
