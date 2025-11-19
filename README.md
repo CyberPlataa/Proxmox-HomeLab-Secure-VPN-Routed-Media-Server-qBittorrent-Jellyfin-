@@ -61,6 +61,7 @@ flowchart TD
 
 All torrent traffic is routed exclusively through wg0.
 
+---
 Section 1 — Proxmox Setup
 Host Setup
 
@@ -87,7 +88,7 @@ Fix:
 Halted pfSense
 Rebooted Ubuntu VM
 Internet restored
-
+---
 Section 2 — WireGuard VPN Integration (Mullvad)
 Installation
 sudo apt install wireguard
@@ -109,6 +110,7 @@ Returned Mullvad exit IP: 146.70.171.183
 Auto Start
 ```sudo systemctl enable wg-quick@wg0```
 
+---
 
 Section 3 — qBittorrent-nox (VPN-Bound)
 
@@ -140,12 +142,13 @@ Tools → Options → Advanced → Network Interface → wg0
 This forces all torrent traffic through the VPN.
 
 If VPN goes down → qBit instantly loses internet (safety measure).
-
+---
 Section 4 — Jellyfin Media Server
 Installation
 
 Installed from official .deb:
 
+---
 
 Section 5 — Media Directory Structure
 Directories
@@ -157,7 +160,7 @@ sudo mkdir -p /mnt/media/music
 sudo mkdir -p /mnt/media/downloads
 sudo chown -R robin:robin /mnt/media
 ```
-
+---
 Section 6 — Troubleshooting & Lessons Learned
 
 Networking Issues 
@@ -189,27 +192,25 @@ Understanding NIC behavior inside VMs
 
 
 
-
-What This Project Demonstrates
-
-This project showcases:
-Virtualization (Proxmox)
-Linux system administration
-VPN tunneling
-Routing & network isolation
-Service configuration
-Troubleshooting real-world failures
-Web-based application hosting
-Secure torrenting best practices
-Media server deployment (Jellyfin)
+---
+> This project showcases:
+* Virtualization (Proxmox)
+* Linux system administration
+* VPN tunneling
+* Routing & network isolation
+* Service configuration
+* Troubleshooting real-world failures
+* Web-based application hosting
+* Secure torrenting best practices
+* Media server deployment (Jellyfin)
 
 
-
-Future Expansions
-Sonarr / Radarr automation
-Prowlarr indexer integration
-Docker + Portainer migration
-Cloudflare Tunnel for secure external access
-SMB/NFS shares
-GPU transcoding (Intel/NVIDIA)
-Intune + Azure AD enterprise lab
+---
+> Future Expansions
+* Sonarr / Radarr automation
+* Prowlarr indexer integration
+* Docker + Portainer migration
+* Cloudflare Tunnel for secure external access
+* SMB/NFS shares
+* GPU transcoding (Intel/NVIDIA)
+* Intune + Azure AD enterprise lab
