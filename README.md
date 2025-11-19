@@ -1,4 +1,4 @@
-Proxmox HomeLab — Secure VPN-Routed Media Server (qBittorrent + Jellyfin)
+# Proxmox HomeLab — Secure VPN-Routed Media Server (qBittorrent + Jellyfin)
 
 ![Linux](https://img.shields.io/badge/Linux-Server-111?logo=linux&logoColor=white)
 ![Proxmox](https://img.shields.io/badge/Proxmox-VE-orange?logo=proxmox)
@@ -11,19 +11,19 @@ Proxmox HomeLab — Secure VPN-Routed Media Server (qBittorrent + Jellyfin)
 
 
 
-###Table of Contents
-Overview
-Architecture
-Proxmox Setup
-WireGuard VPN
-qBittorrent (VPN-Bound)
-Jellyfin Media Server
-Media Directory Structure
-Troubleshooting & Lessons
+### Table of Contents
+* Overview
+* Architecture
+* Proxmox Setup
+* WireGuard VPN
+* qBittorrent (VPN-Bound)
+* Jellyfin Media Server
+* Media Directory Structure
+* Troubleshooting & Lessons
 
 
 
-##Overview
+### Overview
 
 This project implements a secure, self-hosted media server stack inside a Proxmox VE hypervisor using:
 Ubuntu Server 22.04
@@ -94,20 +94,20 @@ sudo apt install wireguard
 
 
 Config
-sudo nano /etc/wireguard/wg0.conf
+```sudo nano /etc/wireguard/wg0.conf```
 
 Security
-sudo chmod 600 /etc/wireguard/wg0.conf
+```sudo chmod 600 /etc/wireguard/wg0.conf```
 
 Start Tunnel 
-sudo wg-quick up wg0
+```sudo wg-quick up wg0```
 
 Verify
-curl ifconfig.me
+```curl ifconfig.me```
 Returned Mullvad exit IP: 146.70.171.183
 
 Auto Start
-sudo systemctl enable wg-quick@wg0
+```sudo systemctl enable wg-quick@wg0```
 
 
 Section 3 — qBittorrent-nox (VPN-Bound)
@@ -123,7 +123,7 @@ Web UI Recovery
 
 Credentials were forgotten — reset using:
 
-~/.config/qBittorrent/qBittorrent.conf
+```~/.config/qBittorrent/qBittorrent.conf```
 
 Cleared WebUI entries → qBit returned to:
 
@@ -149,12 +149,14 @@ Installed from official .deb:
 
 Section 5 — Media Directory Structure
 Directories
+```
 sudo mkdir -p /mnt/media/movies
 sudo mkdir -p /mnt/media/tv
 sudo mkdir -p /mnt/media/anime
 sudo mkdir -p /mnt/media/music
 sudo mkdir -p /mnt/media/downloads
 sudo chown -R robin:robin /mnt/media
+```
 
 Section 6 — Troubleshooting & Lessons Learned
 
@@ -163,10 +165,11 @@ Default gateway missing
 pfSense interference
 Resolved via routing and DNS checks
 Commands used extensively:
-ip a
+``ip a
 ip route
 ping
 curl
+``
 
 VPN Leak Prevention
 qBittorrent explicitly bound to wg0
